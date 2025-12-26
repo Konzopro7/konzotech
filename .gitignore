@@ -1,7 +1,28 @@
-/.idea/inspectionProfiles/profiles_settings.xml
-/.idea/shelf/Changes/shelved.patch
-/.idea/shelf/Changes.xml
-/.idea/konzotech.iml
-/.idea/misc.xml
-/.idea/vcs.xml
-/.idea/workspace.xml
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+
+# Virtual env
+venv/
+.env/
+*.env
+
+# Django
+db.sqlite3
+*.log
+media/
+staticfiles/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
