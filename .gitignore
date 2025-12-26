@@ -1,23 +1,10 @@
-# Python
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-*.so
-*.egg-info/
-dist/
-build/
-
-# Virtual env
+# Environnement
+.env
 venv/
-.env/
-*.env
+__pycache__/
 
-# Django
+# Base de données locale
 db.sqlite3
-*.log
-media/
-staticfiles/
 
 # IDE
 .idea/
