@@ -1,0 +1,34 @@
+{% extends "core/base.html" %}
+
+{% block title %}Projets web réalisés | KONZO TECH{% endblock %}
+{% block meta_description %}
+Quelques exemples de projets réalisés ou réalisables par KONZO TECH : sites vitrines, e-commerce, pages événementielles et solutions web sur mesure pour entrepreneurs, associations et PME.
+{% endblock %}
+
+{% block content %}
+<!-- contenu actuel -->
+
+<div class="container py-5">
+  <h1 class="mb-4">Projets réalisés</h1>
+  <p class="mb-4">Voici quelques exemples de projets que KONZO TECH peut réaliser ou a déjà réalisés.</p>
+
+  <div class="row">
+    {% for project in projects %}
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">{{ project.titre }}</h5>
+            {% if project.client %}<p class="text-muted">Client : {{ project.client }}</p>{% endif %}
+            <p class="card-text">{{ project.description }}</p>
+            {% if project.lien %}
+              <a href="{{ project.lien }}" target="_blank" class="btn btn-sm btn-outline-primary">Voir le site</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p>Aucun projet ajouté pour le moment. Ajoutez-en depuis l’admin Django.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

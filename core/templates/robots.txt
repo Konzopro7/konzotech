@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+# À adapter quand tu auras un domaine et un sitemap
+Sitemap: https://www.votre-domaine.com/sitemap.xml

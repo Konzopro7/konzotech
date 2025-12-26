@@ -1,0 +1,54 @@
+{% extends "core/base.html" %}
+
+{% block title %}Contact | Discutons de votre projet web | KONZO TECH{% endblock %}
+{% block meta_description %}
+Contactez KONZO TECH pour discuter de votre projet de site vitrine, e-commerce ou refonte. Réponse rapide par formulaire, téléphone ou WhatsApp.
+{% endblock %}
+
+{% block content %}
+<!-- contenu actuel -->
+
+<div class="container py-5">
+  <h1 class="mb-4">Contact</h1>
+    {% if success %}
+  <div class="alert alert-success">
+    Merci {{ nom }}, votre message a bien été reçu. Nous vous contacterons rapidement.
+  </div>
+{% endif %}
+
+  <p class="mb-4">Expliquez votre besoin (site vitrine, e-commerce, refonte...) et nous revenons vers vous.</p>
+
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label class="form-label">Nom complet</label>
+          <input type="text" class="form-control" name="nom" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" name="email" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Téléphone</label>
+          <input type="text" class="form-control" name="telephone">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Votre projet</label>
+          <textarea class="form-control" name="message" rows="4" placeholder="Ex: site e-commerce pour chaussures..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <div class="p-4 bg-light rounded">
+        <h4>Contact direct</h4>
+        <p class="mb-1"><strong>Téléphone :</strong> 514-772-7758</p>
+        <p class="mb-1"><strong>Email :</strong> mouhamadoukonare99@gmail.com</p>
+        <p class="mb-0"><strong>Entreprise :</strong> KONZO TECH</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,124 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Création de sites web modernes à Montréal | KONZO TECH{% endblock %}
+{% block meta_description %}
+KONZO TECH conçoit des sites vitrines et e-commerce modernes pour les entrepreneurs, petites entreprises, associations et étudiants au Québec. Accompagnement complet de l’idée jusqu’à la mise en ligne.
+{% endblock %}
+{% block og_description %}
+Agence web basée au Québec, spécialisée dans la création de sites simples à utiliser, rapides et adaptés à ton activité.
+{% endblock %}
+
+{% block content %}
+
+
+
+<!-- HERO -->
+<section class="hero-section hero-bg">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- COLONNE GAUCHE : TEXTE -->
+      <div class="col-lg-6 hero-text">
+        <span class="badge-hero">Agence web · KONZO TECH</span>
+
+        <h1>Des sites modernes pour développer ton activité.</h1>
+
+        <p>
+          Création de sites vitrines, e-commerce, optimisation et refonte
+          pour augmenter ta crédibilité et attirer plus de clients.
+        </p>
+
+        <div class="mt-4 hero-buttons">
+          <a href="/contact/" class="btn btn-primary-hero">Demander un devis</a>
+          <a href="/services/" class="btn btn-outline-hero">Voir nos services</a>
+        </div>
+      </div>
+
+      <!-- COLONNE DROITE : LA CARTE -->
+      <div class="col-lg-5 offset-lg-1 hero-services-box">
+        <div class="hero-card shadow">
+          <h4>Services inclus</h4>
+          <ul>
+            <li>Création de sites vitrines</li>
+            <li>Création de sites e-commerce</li>
+            <li>Refonte de sites existants</li>
+            <li>Optimisation mobile</li>
+            <li>Référencement SEO</li>
+            <li>Intégration réseaux sociaux</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- SERVICES -->
+<section class="section bg-light reveal" id="services">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-title">Ce que fait KONZO TECH</h2>
+      <p class="section-subtitle">On te donne une présence web qui inspire confiance.</p>
+    </div>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="service-card h-100">
+          <h5>Site vitrine</h5>
+          <p>Site professionnel pour présenter ton entreprise, tes services et tes contacts.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="service-card h-100">
+          <h5>Site e-commerce</h5>
+          <p>Boutique en ligne complète pour vendre tes produits et encaisser les paiements.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="service-card h-100">
+          <h5>Refonte & optimisation</h5>
+          <p>Tu as déjà un site ? On le modernise, on l’accélère et on l’adapte au mobile.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHIFFRES -->
+<section class="section reveal">
+  <div class="container">
+    <div class="row text-center g-4">
+      <div class="col-md-4">
+        <h2 class="counter" data-target="30">1</h2>
+        <p>Projets livrés</p>
+      </div>
+      <div class="col-md-4">
+        <h2 class="counter" data-target="15">0</h2>
+        <p>Clients accompagnés</p>
+      </div>
+      <div class="col-md-4">
+        <h2 class="counter" data-target="5">1</h2>
+        <p>Pays desservis</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section reveal">
+  <div class="container">
+    <div class="cta-block">
+      <div>
+        <h3>Tu veux lancer ton site rapidement ?</h3>
+        <p class="mb-0">Explique ton projet, on te répond et on te fait une démo.</p>
+      </div>
+      <div>
+        <a href="/contact/" class="btn btn-light">Contact rapide</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,874 @@
+/* ====== BASE ====== */
+body {
+  background: #fff;
+  color: #222;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.7;
+}
+
+/* ====== COULEURS ====== */
+.text-primary {
+  color: #004aad !important;
+}
+.btn-primary {
+  background: #004aad;
+  border-color: #004aad;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background: #00367f;
+  border-color: #00367f;
+  transform: translateY(-2px);
+}
+.btn-outline-secondary:hover {
+  background: #004aad;
+  color: #fff;
+  border-color: #004aad;
+}
+.bg-primary-soft {
+  background: rgba(0, 74, 173, 0.12);
+  color: #004aad;
+}
+
+/* ====== HERO ====== */
+.hero-section {
+  padding: 6rem 0 5rem 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f3f7fb 100%);
+  position: relative;
+  overflow: hidden;
+}
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle at center, #004aad20 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+}
+.hero-title {
+  font-size: clamp(2.4rem, 3vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: #555;
+  max-width: 540px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease 0.3s forwards;
+}
+.hero-card {
+  border: 1px solid #edf0f4;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease 0.6s forwards;
+}
+
+/* ====== SECTIONS ====== */
+.section {
+  padding: 4rem 0;
+  animation: fadeIn 0.6s ease forwards;
+}
+.section-title {
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+.section-subtitle {
+  color: #666;
+  font-size: 1.05rem;
+}
+
+/* ====== CARDS ====== */
+.service-card {
+  background: #fff;
+  border: 1px solid #edf0f4;
+  border-radius: 1rem;
+  padding: 1.8rem;
+  transition: all .3s ease;
+  text-align: left;
+}
+.service-card:hover {
+  box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+  transform: translateY(-5px);
+}
+
+/* ====== CTA ====== */
+.cta-block {
+  background: #004aad;
+  color: #fff;
+  border-radius: 1rem;
+  padding: 2.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 0 10px 30px rgba(0,74,173,0.25);
+  animation: fadeInUp 1s ease forwards;
+}
+@media (max-width: 768px) {
+  .cta-block {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ====== FOOTER ====== */
+.footer {
+  background: #fff;
+  border-top: 1px solid #eee;
+  font-size: 0.95rem;
+}
+.footer a {
+  color: #004aad;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* ====== NAVBAR SHRINK ====== */
+.navbar.navbar-small {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  padding-top: .25rem !important;
+  padding-bottom: .25rem !important;
+}
+
+/* ====== BACK TO TOP ====== */
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: #004aad;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s ease;
+  z-index: 999;
+}
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-3px);
+}
+
+/* ====== REVEAL ANIMATION ====== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all .6s ease;
+}
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ====== KEYFRAMES ====== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.social-links img.social-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 50%;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.social-links img.social-img:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* bouton flottant */
+#chatbot-toggle {
+  position: fixed;
+  bottom: 90px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: #004aad;
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+/* fenêtre chatbot */
+#chatbot {
+  position: fixed;
+  bottom: 150px;
+  right: 25px;
+  width: 280px;
+  max-height: 380px;
+  background: #fff;
+  border: 1px solid #edf0f4;
+  border-radius: 1rem;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+  z-index: 999;
+}
+#chatbot-header {
+  background: #004aad;
+  color: #fff;
+  padding: .6rem .8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#chatbot-header button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+#chatbot-messages {
+  padding: .8rem;
+  flex: 1;
+  overflow-y: auto;
+  background: #f6f8fb;
+}
+.msg {
+  background: #fff;
+  padding: .4rem .6rem;
+  border-radius: .6rem;
+  margin-bottom: .4rem;
+  font-size: .85rem;
+}
+.msg.bot {
+  background: #e9f2ff;
+}
+.msg.user {
+  background: #d1ffe3;
+  text-align: right;
+}
+#chatbot-input {
+  display: flex;
+  border-top: 1px solid #eee;
+}
+#chatbot-input input {
+  flex: 1;
+  border: none;
+  padding: .4rem .6rem;
+  outline: none;
+}
+#chatbot-input button {
+  border: none;
+  background: #004aad;
+  color: #fff;
+  padding: 0 .8rem;
+  cursor: pointer;
+}
+/* ===== HERO BACKGROUND IMAGE ANIMÉE ===== */
+.hero-bg {
+  position: relative;
+  background-image: url("../img/hero-bg.webp"); /* ton image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* couche sombre
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  z-index: 1;
+}*/
+
+/* couche image animée (zoom/fondu) */
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+  transform: scale(1);
+  animation: zoomFade 20s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+/* effet zoom lent + fondu */
+@keyframes zoomFade {
+  0% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 0.9;
+  }
+}
+
+/* texte au-dessus */
+.hero-bg .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-bg .hero-title {
+  color: #fff;
+  font-size: clamp(2.3rem, 4vw, 3.2rem);
+  font-weight: 700;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+.hero-bg .hero-subtitle {
+  color: #f1f1f1;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  animation: fadeInUp 2s ease 0.4s forwards;
+}
+
+/* animation d'apparition du texte */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* ===== HERO BACKGROUND IMAGE ===== */
+.hero-bg {
+  background-image: url("../img/hero-bg.webp"); /* ou hero-bg.webp */
+  background-size: cover;       /* occupe tout l’espace */
+  background-position: center;  /* bien centré */
+  background-repeat: no-repeat;
+  position: relative;
+  color: #fff;                  /* texte en blanc sur image */
+  z-index: 1;
+}
+
+/* couche assombrissante pour lisibilité du texte */
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* noir semi-transparent */
+  z-index: 0;
+}
+
+/* remettre le contenu par-dessus */
+.hero-bg .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* adapter le titre/sous-titre */
+.hero-bg .hero-title {
+  color: #fff;
+}
+.hero-bg .hero-subtitle {
+  color: #e0e0e0;
+}
+
+/* ===== HERO BACKGROUND IMAGE ANIMÉE ===== */
+.hero-bg {
+  position: relative;
+  background-image: url("../img/hero-bg.webp"); /* ton image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: black;
+  overflow: hidden;
+}
+
+/* couche sombre */
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,74,173,0.65), rgba(0,0,0,0.6));
+  z-index: 1;
+}
+
+/* couche image animée (zoom/fondu) */
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+  transform: scale(1);
+  animation: zoomFade 20s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+/* effet zoom lent + fondu */
+@keyframes zoomFade {
+  0% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 0.9;
+  }
+}
+
+/* texte au-dessus */
+.hero-bg .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-bg .hero-title {
+  animation: fadeInUp 1.2s ease forwards;
+}
+@keyframes fadeInUp {
+  from {opacity:0; transform:translateY(20px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+
+.hero-bg .hero-subtitle {
+  color: #f1f1f1;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  animation: fadeInUp 2s ease 0.4s forwards;
+}
+
+/* animation d'apparition du texte */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/*
+.hero-section p,
+.hero-section .small {
+  color: #fff !important;
+}*/
+
+/*
+.hero-section .badge {
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+  font-weight: 600;
+}*/
+
+
+
+
+/* rendre le texte du hero lisible à coup sûr
+.hero-text-box {
+  background: rgba(0, 0, 0, 0.45);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(4px);
+  color: #fff !important;
+}
+.hero-text-box h1,
+.hero-text-box p,
+.hero-text-box .small,
+.hero-text-box .badge {
+  color: #fff !important;
+}*/
+
+/* bouton gris sur fond sombre
+.hero-text-box .btn.btn-outline-light {
+  border-color: rgba(255,255,255,0.9);
+}*/
+.hero-section h1,
+.hero-section p,
+.hero-section span,
+.hero-section .small {
+    color: #fff !important;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+}
+
+.hero-section .btn {
+    color: #fff !important;
+    border-color: #fff !important;
+}
+
+
+
+footer img {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+}
+/* HERO background fix */
+.hero-bg {
+    position: relative;
+    background-image: url('../img/hero-bg.webp');
+    background-size: cover;
+    background-position: center;
+    padding: 140px 0;
+}
+
+/* enlever l'assombrissement trop fort */
+.hero-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.25); /* léger pour lisibilité */
+    z-index: 1;
+}
+
+/* tout le contenu au dessus du voile */
+.hero-section * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Texte du hero */
+.hero-text h1 {
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    color: #e7e7e7;
+    font-size: 17px;
+}
+
+.badge-hero {
+    background: rgba(255,255,255,0.20);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.25);
+}
+
+.hero-info {
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Buttons */
+.btn-primary-hero {
+    background: #0057ff;
+    padding: 12px 22px;
+    border-radius: 10px;
+    color: #fff !important;
+    font-weight: 600;
+}
+
+.btn-outline-hero {
+    padding: 12px 22px;
+    border-radius: 10px;
+    color: #fff !important;
+    border: 2px solid #fff;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+/* CARD SERVICES */
+.hero-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 14px;
+}
+
+.hero-card h4 {
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.hero-card ul {
+    padding-left: 18px;
+    margin: 0;
+}
+
+.hero-card li {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+/* Portfolio */
+.timeline {
+  border-left: 2px solid #e5e5e5;
+  padding-left: 18px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #0d6efd;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+
+/* Centrer et limiter la largeur du texte du hero */
+.hero-text {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;              /* centre le bloc dans le hero */
+}
+
+/* Titre plus propre */
+.hero-text h1 {
+  font-size: 2.6rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+/* Paragraphe lisible */
+.hero-text p {
+  font-size: 1.05rem;
+  color: #f1f1f1;
+}
+
+/* Boutons alignés comme les pros */
+.hero-buttons {
+  display: inline-flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Option : sur écran large, on laisse le texte légèrement à gauche */
+@media (min-width: 992px) {
+  .hero-text {
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .hero-buttons {
+    justify-content: flex-start;
+  }
+}
+
+
+
+
+
+/* Ajustement de la carte services à droite */
+.hero-services-box {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-card {
+    max-width: 340px;
+    padding: 25px;
+    border-radius: 18px;
+    background: #fff;
+}
+
+/* Sur mobile : mettre la carte en dessous */
+@media (max-width: 991px) {
+    .hero-services-box {
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .hero-card {
+        max-width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ===== Cookie Banner (bottom) ===== */
+.cookie-banner{
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  background: rgba(10,10,10,.95);
+  color: #fff;
+  padding: 14px 16px;
+  display: none;
+  z-index: 9999;
+  border-top: 1px solid rgba(255,255,255,.10);
+}
+
+.cookie-banner__content{
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cookie-banner__text{
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.cookie-banner__link{
+  color: #9ecbff;
+  text-decoration: underline;
+}
+
+.cookie-banner__actions{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* ===== Cookie Modal (CENTER like pro sites) ===== */
+.cookie-modal{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);   /* overlay */
+  display: none;
+  z-index: 10000;
+  padding: 20px;
+  backdrop-filter: blur(2px);
+}
+
+.cookie-modal__box{
+  width: min(520px, 92vw);
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px 18px 16px;
+  box-shadow: 0 15px 50px rgba(0,0,0,.35);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);  /* ✅ centré */
+}
+
+.cookie-modal__title{
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.cookie-modal__desc{
+  margin: 0 0 14px;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.cookie-modal__actions{
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+/* ===== Switch pro ===== */
+.cookie-switch{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+}
+
+.cookie-switch input{
+  display: none;
+}
+
+.cookie-switch__slider{
+  width: 44px;
+  height: 24px;
+  background: #d6d6d6;
+  border-radius: 999px;
+  position: relative;
+  flex: 0 0 auto;
+  transition: .2s ease;
+}
+
+.cookie-switch__slider::after{
+  content: "";
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  transition: .2s ease;
+}
+
+.cookie-switch input:checked + .cookie-switch__slider{
+  background: #0d6efd;
+}
+
+.cookie-switch input:checked + .cookie-switch__slider::after{
+  left: 23px;
+}
+
+.cookie-switch__label{
+  font-size: 14px;
+  color: #222;
+}

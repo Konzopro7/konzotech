@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="fr">
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}KONZO TECH – Agence web à Montréal | Sites vitrines & e-commerce{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO de base -->
+  <meta name="description" content="{% block meta_description %}KONZO TECH est une agence web qui crée des sites vitrines et e-commerce modernes pour entrepreneurs, PME, associations et étudiants au Québec et au Sénégal.{% endblock %}">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="KONZO TECH">
+
+  <!-- Canonical -->
+  {% if request %}
+  <link rel="canonical" href="{{ request.build_absolute_uri }}">
+  {% endif %}
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="{% static 'img/logo konzo_tech.png' %}">
+
+  <!-- Open Graph (réseaux sociaux) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="KONZO TECH">
+  <meta property="og:title" content="{% block og_title %}KONZO TECH – Agence web à Montréal | Sites vitrines & e-commerce{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}Création de sites vitrines et e-commerce modernes, simples à utiliser, pensés pour faire grandir ton activité au Québec et ailleurs.{% endblock %}">
+  {% if request %}
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+  {% endif %}
+  <meta property="og:locale" content="fr_CA">
+  <meta property="og:image" content="{% static 'img/hero-bg.webp' %}">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% block twitter_title %}KONZO TECH – Agence web{% endblock %}">
+  <meta name="twitter:description" content="{% block twitter_description %}Sites vitrines et e-commerce modernes pour booster ta présence en ligne.{% endblock %}">
+  <meta name="twitter:image" content="{% static 'img/hero-bg.webp' %}">
+
+  <!-- CSS Bootstrap -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+  <!-- Ton style -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <!-- Données structurées (schema.org) - à adapter avec ton vrai domaine -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "KONZO TECH",
+    "url": "https://www.votre-domaine.com",
+    "logo": "https://www.votre-domaine.com{% static 'img/logo konzo_tech.png' %}",
+    "sameAs": [
+      "https://www.facebook.com/",
+      "https://www.instagram.com/konzo_pro_7/",
+      "https://www.linkedin.com/in/mouhamadou-konare-942970282/"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "CA",
+      "addressRegion": "QC"
+    }
+  }
+  </script>
+</head>
+
+<!-- Cookie Banner -->
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Consentement cookies">
+  <div class="cookie-banner__content">
+    <p class="cookie-banner__text">
+      🍪 Nous utilisons des cookies essentiels (sécurité, formulaires) et, avec votre accord, des cookies de mesure
+      d’audience pour améliorer nos services.
+      <a href="{% url 'politique_cookies' %}" class="cookie-banner__link">En savoir plus</a>
+    </p>
+
+    <div class="cookie-banner__actions">
+      <button type="button" id="cookie-accept" class="btn btn-primary btn-sm">Accepter</button>
+      <button type="button" id="cookie-reject" class="btn btn-outline-light btn-sm">Refuser</button>
+      <button type="button" id="cookie-settings" class="btn btn-link btn-sm text-white-50">Paramétrer</button>
+    </div>
+  </div>
+</div>
+
+<!-- Cookie Preferences Modal (CENTER) -->
+<div id="cookie-modal" class="cookie-modal" aria-hidden="true">
+  <div class="cookie-modal__box" role="dialog" aria-label="Préférences cookies">
+    <h2 class="cookie-modal__title">Préférences cookies</h2>
+    <p class="cookie-modal__desc">
+      Les cookies essentiels sont nécessaires. Les cookies de mesure d’audience sont optionnels.
+    </p>
+
+    <label class="cookie-switch">
+      <input type="checkbox" id="cookie-analytics">
+      <span class="cookie-switch__slider"></span>
+      <span class="cookie-switch__label">Autoriser la mesure d’audience (Analytics)</span>
+    </label>
+
+    <div class="cookie-modal__actions">
+      <button type="button" id="cookie-save" class="btn btn-primary btn-sm">Enregistrer</button>
+      <button type="button" id="cookie-close" class="btn btn-outline-secondary btn-sm">Fermer</button>
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'js/analytics.js' %}" defer></script>
+
+
+<body>
+
+  <!-- Chatbot KONZO TECH -->
+  <div id="chatbot">
+    <div id="chatbot-header">
+      <span>Chat KONZO TECH</span>
+      <button id="chatbot-close">&times;</button>
+    </div>
+    <div id="chatbot-messages">
+      <div class="msg bot">Bonjour 👋 Comment pouvons-nous vous aider ? (site web, e-commerce, prix...)</div>
+    </div>
+    <div id="chatbot-input">
+      <input type="text" id="chatbot-text" placeholder="Écrivez votre message...">
+      <button id="chatbot-send">Envoyer</button>
+    </div>
+  </div>
+
+  <button id="chatbot-toggle">💬</button>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="/">
+        <img src="{% static 'img/logo konzo_tech.png' %}" alt="Konzotech" height="38" class="me-2">
+        <span class="fw-bold text-primary">KONZO TECH</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="/">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="/services/">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="/projets/">Projets</a></li>
+          <li class="nav-item"><a class="nav-link" href="/portfolio/">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about/">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenu spécifique des pages -->
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div class="mb-3 mb-md-0">
+        <div class="fw-bold">KONZO TECH</div>
+            <a href="{% url 'politique_confidentialite' %}" class="text-white-50 small">Politique de confidentialité</a>
+            <span class="text-white-50 small">·</span>
+            <a href="{% url 'politique_cookies' %}" class="text-white-50 small">Cookies</a>
+
+        <div class="small text-muted">Agence web · Sites vitrines & e-commerce</div>
+        <div class="small mt-1">Réponse rapide · 514-772-7758 · mouhamadoukonare99@gmail.com</div>
+      </div>
+      <div class="d-flex align-items-center">
+        <span class="me-2 small">Suivez-nous :</span>
+        <a href="https://www.facebook.com/" target="_blank" class="me-2">
+          <img src="{% static 'img/facebook.svg' %}" alt="Facebook" class="social-img">
+        </a>
+        <a href="https://www.instagram.com/konzo_pro_7/" target="_blank" class="me-2">
+          <img src="{% static 'img/instagram.svg' %}" alt="Instagram" class="social-img">
+        </a>
+        <a href="https://www.linkedin.com/in/mouhamadou-konare-942970282/" target="_blank" class="me-2">
+          <img src="{% static 'img/linkedin.svg' %}" alt="LinkedIn" class="social-img">
+        </a>
+        <a href="https://wa.me/15147727758" target="_blank">
+          <img src="{% static 'img/whatsapp.svg' %}" alt="WhatsApp" class="social-img">
+        </a>
+
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

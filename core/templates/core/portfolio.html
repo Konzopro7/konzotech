@@ -1,0 +1,209 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Portfolio | Konare Mouhamadou – Développeur web & fondateur de KONZO TECH{% endblock %}
+{% block meta_description %}
+Découvrez le parcours de Konare Mouhamadou : étudiant en informatique à l’UQO, développeur web et fondateur de KONZO TECH, avec des projets web, bénévolat et expériences académiques au Canada et au Sénégal.
+{% endblock %}
+
+{% block content %}
+<!-- contenu actuel -->
+
+<section class="py-5 bg-light border-bottom">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-lg-2 text-center mb-3 mb-lg-0">
+        <img src="{% static 'img/mouhamadou.jpg' %}"
+             alt="Photo de Konare Mouhamadou"
+             class="img-fluid rounded-circle"
+             style="max-width: 200px;">
+      </div>
+
+      <div class="col-lg-6">
+        <p class="text-uppercase text-muted small mb-1">Portfolio</p>
+        <h1 class="mb-3">KONARE MOUHAMADOU</h1>
+
+
+        <h2 class="h4 text-primary mb-3">Étudiant en informatique • Développeur web • Entrepreneur</h2>
+        <p class="text-muted">
+          Étudiant en informatique à l’UQO et fondateur de <strong>KONZO TECH</strong>,
+          je conçois des sites vitrines, e-commerce et des solutions web adaptées aux
+          entreprises, associations et projets innovants.
+        </p><br>
+          <a href="{% static 'docs/portfolio_mouhamadou_konare.pdf' %}"
+   class="btn btn-outline-primary mt-3"
+   download>
+  Télécharger mon portfolio (PDF)
+</a>
+      </div>
+
+      <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+        <div class="small text-muted">
+          <div><strong>Ville :</strong> Saint-Hippolyte / Québec</div>
+          <div><strong>Email :</strong> mouhamadoukonare99@gmail.com</div>
+          <div><strong>Téléphone :</strong> 514-772-7758</div>
+          <div><strong>Agence :</strong> KONZO TECH</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="py-5">
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- Colonne gauche -->
+      <div class="col-lg-4">
+
+        <!-- Compétences techniques -->
+        <h3 class="h5 mb-3">Compétences techniques</h3>
+        <ul class="list-unstyled text-muted mb-4">
+          <li><strong>Langages :</strong> Python, JavaScript, SQL</li>
+          <li><strong>Back-end :</strong> Django, API REST</li>
+          <li><strong>Front-end :</strong> HTML5, CSS3, Bootstrap</li>
+          <li><strong>Base de données :</strong> SQLite, SQL Server</li>
+          <li><strong>Outils :</strong> Git, GitHub, Figma, VS Code, PyCharm</li>
+          <li><strong>Autres :</strong> WordPress, notions Flutter</li>
+        </ul>
+
+        <!-- Compétences humaines -->
+        <h3 class="h5 mb-3">Compétences humaines</h3>
+        <ul class="list-unstyled text-muted mb-4">
+          <li>Autonomie et rigueur</li>
+          <li>Gestion de projet</li>
+          <li>Communication claire</li>
+          <li>Travail en équipe (projets universitaires)</li>
+          <li>Esprit analytique</li>
+        </ul>
+
+        <!-- Bénévolats -->
+        <h3 class="h5 mb-3">Bénévolat</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4 class="h6 mb-1">Fondation UQO — Campus Saint-Jérôme</h4>
+            <div class="text-muted small mb-1">2025 — Présent</div>
+            <p class="text-muted small">
+              Gestion et mise à jour des articles, informations et événements via la plateforme <strong>Zeffy</strong>.
+              Support technique et organisationnel pour les activités étudiantes et caritatives.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- Colonne droite -->
+      <div class="col-lg-8">
+
+        <!-- Projets -->
+        <h3 class="h5 mb-3">Projets & réalisations</h3>
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <h4 class="h6 mb-1">Québec Plus — App mobil tout-en-un (en cours)</h4>
+            <div class="text-muted small mb-1">2025</div>
+            <p class="text-muted small mb-2">
+             Québec+ est une application numérique tout-en-un destinée à simplifier la vie des Québécois.
+                Elle centralise les informations et services essentiels du quotidien : météo, transports, factures, rabais, communauté, et plus encore.
+                Le backend repose sur Django REST Framework pour garantir une API robuste, sécurisée et évolutive.
+            </p>
+            <p class="text-muted small"><strong>Rôle :</strong> Développeur & concepteur du projet.</p>
+          </div>
+
+          <div class="timeline-item">
+            <h4 class="h6 mb-1">KONZO TECH — Site vitrine d’agence web</h4>
+            <div class="text-muted small mb-1">2025</div>
+            <p class="text-muted small mb-2">
+              Site professionnel complet (accueil, services, projets, portfolio, contact)
+              avec formulaire d'envoi d’email via Django et design avancé.
+            </p>
+            <p class="text-muted small"><strong>Technos :</strong> Django, Bootstrap.</p>
+          </div>
+
+          <div class="timeline-item">
+            <h4 class="h6 mb-1">Conférences UQONNECT — Page évènementielle</h4>
+            <div class="text-muted small mb-1">2025</div>
+            <p class="text-muted small">
+              Création d’une page claire et moderne pour mettre en avant les conférences
+              organisées à l’UQO.
+            </p>
+            <p class="text-muted small"><strong>Technos :</strong> HTML, CSS.</p>
+          </div>
+
+          <div class="timeline-item">
+            <h4 class="h6 mb-1">Kinoush Store — Prototype e-commerce(en cours)</h4>
+            <div class="text-muted small mb-1">2025</div>
+            <p class="text-muted small">
+              Boutique en ligne avec pages produits, gestion panier et structure e-commerce.
+            </p>
+          </div>
+            <div class="timeline-item">
+            <h4 class="h6 mb-1">Application agricole tout-en-un(en cours)</h4>
+            <div class="text-muted small mb-1">Idée de projet · long terme</div>
+            <p class="text-muted small">
+              Concept d’application pour accompagner les débutants en agriculture (aviculture,
+              pisciculture, horticulture, etc.) avec des guides pas à pas, des abonnements et un
+              contenu adapté à chaque niveau.
+            </p>
+                 <p class="text-muted small">
+              <strong>Rôle :</strong> conception de l’idée, structure fonctionnelle, premières maquettes.
+            </p>
+          </div>
+             <div class="timeline-item">
+            <h4 class="h6 mb-1">Plateforme d’événements – Communautés africaines au Québec</h4>
+            <div class="text-muted small mb-1">2025 · Projet en cours</div>
+            <p class="text-muted small">
+              Conception d’un site web permettant de centraliser et présenter les événements
+              des différentes communautés africaines au Québec (soirées, conférences, activités).
+            </p>
+                 <p class="text-muted small">
+              <strong>Objectif :</strong> plateforme simple, dynamique et facile à mettre à jour.
+            </p>
+
+        </div>
+
+        <!-- Parcours scolaire -->
+        <h3 class="h5 mt-5 mb-3">Parcours scolaire</h3>
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <h4 class="h6 mb-1">Baccalauréat en informatique</h4>
+            <div class="text-muted small mb-1">Université du Québec en Outaouais (UQO) — En cours</div>
+            <p class="text-muted small">
+              Programmation, génie logiciel, bases de données, développement web, projets pratiques.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h4 class="h6 mb-1">BTS en gestion d’exploitation agroforestière</h4>
+            <div class="text-muted small mb-1">Sénégal</div>
+            <p class="text-muted small">
+              Formation presque complétée (reste 4 mois) avant mon arrivée au Canada.
+              J’ai acquis des compétences en gestion, planification et exploitation agricole,
+              utiles pour mes projets tech et agro.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h4 class="h6 mb-1">Baccalauréat (Sénégal)</h4>
+            <div class="text-muted small mb-1">Lycée ex-CEEM1 Dahra</div>
+            <p class="text-muted small">
+              Études secondaires complétées au Sénégal avant de poursuivre mes études au Canada.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
